@@ -1,0 +1,17 @@
+[
+    {
+        "id": "bike",
+        "name": "bike",
+        "color": "red"
+    },
+    {
+        "id": "mac",
+        "name": "mac",
+        "color": "silver"
+    },
+    {
+        "id": "phone",
+        "name": "phone",
+        "color": "black"
+    }
+]

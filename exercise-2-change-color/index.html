@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="pie"></div>
+
+    <script>
+        let orgColor;
+        let id;
+
+        document.addEventListener("DOMContentLoaded", loadSvg);
+
+        async function loadSvg(){
+            let svgData = await fetch("pie.svg");
+            let mySvg = await svgData.text();
+
+            document.querySelector(".pie").innerHTML = mySvg;
+        }
+
+        document.querySelector(".pie").addEventListener("mouseover", changeColor);
+
+        function changeColor(){
+            id = event.target.getAttribute("id");
+            orgColor = document.querySelector("#"+id).getAttribute("fill");
+            document.querySelector("#"+id).setAttribute("fill", "#c0ffee");
+            console.log(orgColor);
+        }
+            
+        document.querySelector(".pie").addEventListener("mouseout", changeColorBack);
+
+        function changeColorBack(){
+            
+            document.querySelector("#"+id).setAttribute("fill", orgColor);
+        }
+
+            // mouse over: get the original color, change the pie color
+            // mouse out: change the color to the original one
+    </script>
+</body>
+</html>
