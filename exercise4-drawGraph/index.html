@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #svgcontainer{
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        polyline{
+            stroke-dasharray: 365;
+            stroke-dashoffset: 365;
+            transition: all 6s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="svgcontainer">
+
+        <svg viewBox = "0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="" fill="none" stroke="black"></polyline>
+        </svg>
+
+    </div> 
+    <script>
+        let points = ["0,50", "10,20", "20,5", "30,33", "40,10", "50,5", "60,45", "70,12", "80,30", "90,39", "100,32", "110,7"];
+        let newpoints="";
+        
+        window.addEventListener("load", drawGraph);
+
+        function drawGraph(){
+            points.forEach(function(point){
+                newpoints += point + " ";
+            });
+            
+            document.querySelector("polyline").setAttribute("points", newpoints);
+            document.querySelector("polyline").style.strokeDashoffset = "0";
+
+
+        };
+        
+        
+        console.log(points);
+        console.log(newpoints);
+        
+        
+    </script>
+</body>
+</html>

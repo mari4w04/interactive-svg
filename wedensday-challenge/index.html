@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #svgcontainer{
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        svg{
+            transform: rotate(180deg);
+            transform: scaleY(-1);
+        }
+        polyline{
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            transition: all 20s linear;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="svgcontainer">
+
+        <svg viewBox = "0 0 510 70" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="" fill="none" stroke="black"></polyline>
+        </svg>
+
+    </div> 
+
+    <script>
+        let myJson;
+        let agePoint;
+        let agePoints = "";
+        let x=0;
+
+        document.addEventListener("DOMContentLoaded", loadJson);
+        
+        async function loadJson(){
+            let jsonData = await fetch("persons.json");
+            myJson = await jsonData.json();
+
+            myJson.forEach(function(person){
+                agePoint = [x+=10, person.age];
+                console.log(agePoint);
+                agePoints += agePoint + " ";
+                
+            });
+            console.log(agePoints);
+        }
+        
+        window.addEventListener("load", drawGraph);
+
+        function drawGraph(){
+            document.querySelector("polyline").setAttribute("points", agePoints);
+            document.querySelector("polyline").style.strokeDashoffset = "0";
+        }
+        
+
+        
+    </script>
+</body>
+</html>

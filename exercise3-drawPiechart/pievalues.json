@@ -1,0 +1,20 @@
+[
+    {
+        "id": "s1",
+        "segmentValue": "85",
+        "position": "-30",
+        "percent": "20%"
+    },
+    {   
+        "id": "s2",
+        "segmentValue": "110",
+        "position": "-115",
+        "percent": "30%"
+    },
+    {
+        "id": "s3",
+        "segmentValue": "80",
+        "position": "-125",
+        "percent": "50%"
+    }
+]
