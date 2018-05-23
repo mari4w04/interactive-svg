@@ -29,11 +29,11 @@
                 //document.querySelector("h1").textContent = event.target.getAttribute("id"); 
                 myJson.forEach(function(singleElement){
             
-                if(event.target.getAttribute("id") === singleElement.id){
-                    document.querySelector("h1").textContent = singleElement.name;   
-                }             
-                //console.log(singleElement.name);
-            })               
+                    if(event.target.getAttribute("id") === singleElement.id){
+                        document.querySelector("h1").textContent = singleElement.name;   
+                    }             
+                    //console.log(singleElement.name);
+                });               
             }
 
             
