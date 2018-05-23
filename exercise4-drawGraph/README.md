@@ -2,7 +2,7 @@
 ###  A:Draw a graph
 * Make a new html document
 * make a svg element and draw a polyline (https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
-* put the points values in an array to make the code scalable and insert them into your html with a forEach loop
+* put the points values in an array to make the code scalable and insert them into your html with a forEach loop. For this to work you have to know how to combine a string...
 
 ###  B:Animate the graph
 * animate the graph using stroke-dasharray and stroke-dashoffset
